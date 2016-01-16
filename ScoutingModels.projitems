@@ -9,6 +9,12 @@
     <Import_RootNamespace>ScoutingModels</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Data\" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\Alliance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\Event.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\Match.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\RobotEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\Performance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\Robot.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\Team.cs" />
   </ItemGroup>
 </Project>
