@@ -10,10 +10,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Data\Alliance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\Configuration.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\Event.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\Match.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Data\RobotEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\MatchEvent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\Performance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\Picture.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\Robot.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\Team.cs" />
   </ItemGroup>
