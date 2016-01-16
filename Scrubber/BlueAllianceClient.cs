@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 
 namespace ScoutingModels.Scrubber
@@ -71,5 +72,13 @@ namespace ScoutingModels.Scrubber
         /// Request path to get the info for the rankings at an event for a year, Parameter 1 is the year, Parameter 2 is the Event Code
         /// </summary>
         public static string EventRanking => "event/{0}{1}/rankings";
+
+        HttpClient client;
+
+        public BlueAllianceClient()
+        {
+            client = new HttpClient();
+            client.DefaultRequestHeaders.Add(HeaderKey, HeaderValue);
+        }
     }
 }
