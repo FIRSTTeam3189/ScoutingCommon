@@ -90,7 +90,8 @@ namespace ScoutingModels.Scrubber
 
             var array = (await client.GetStreamAsync(requestUri)).JArrayFromStream();
 
-            return array.Select(x => x.GetMatchFro)
+            throw new NotImplementedException();
+            //return array.Select(x => x.GetMatchFro)
         }
     }
 }
