@@ -19,5 +19,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Data\Robot.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\Team.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scrubber\BlueAllianceClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scrubber\BlueAllianceConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scrubber\StreamExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Test\JTokenExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Test\TestExtensions.cs" />
   </ItemGroup>
 </Project>
