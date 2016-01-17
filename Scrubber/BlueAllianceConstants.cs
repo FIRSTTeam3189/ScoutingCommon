@@ -28,9 +28,9 @@ namespace ScoutingModels.Scrubber
         public static string Teams => "teams/{0}";
 
         /// <summary>
-        /// Request Path to get the information of a team, Parameter 1 is the team
+        /// Request Path to get the information of a team, Parameter 1 is the team number
         /// </summary>
-        public static string Team => "team/{0}";
+        public static string Team => "team/frc{0}";
 
         /// <summary>
         /// Request path to get the events a team went to in a year, Parameter 1 is the team number, 2 is the event

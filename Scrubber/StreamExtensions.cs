@@ -42,5 +42,23 @@ namespace ScoutingModels.Scrubber
                 using (var reader = new JsonTextReader(streamReader))
                     return JArray.Load(reader);
         }
+
+        public static JToken JTokenFromStream(this Stream stream, Encoding encoding)
+        {
+            stream.IsNotNull().IsReadableStream();
+
+            using (var streamReader = new StreamReader(stream, encoding))
+                using (var reader = new JsonTextReader(streamReader))
+                    return  JToken.Load(reader);
+        }
+
+        public static JToken JTokenFromStream(this Stream stream)
+        {
+            stream.IsNotNull().IsReadableStream();
+
+            using (var streamReader = new StreamReader(stream, Encoding.UTF8))
+            using (var reader = new JsonTextReader(streamReader))
+                return JToken.Load(reader);
+        }
     }
 }

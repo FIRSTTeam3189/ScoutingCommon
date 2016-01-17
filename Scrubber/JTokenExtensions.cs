@@ -35,5 +35,27 @@ namespace ScoutingModels.Test
 
             return ev;
         }
+
+        /// <summary>
+        /// Gets a Team's Information from JToken provided
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static Team GetTeamFromJToken(this JToken obj)
+        {
+            obj.IsNotNull();
+
+            var te = new Team
+            {
+                Number = obj["team_number"].ToObject<int>(),
+                NickName = obj["nickname"].ToObject<string>(),
+                RookieYear = obj["rookie_year"].ToObject<int?>() ?? -1,
+                Robot = new Robot(),
+                EventsAttended = new List<Event>()
+            };
+
+            return te;
+        }
+
     }
 }

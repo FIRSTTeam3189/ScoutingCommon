@@ -24,7 +24,7 @@ namespace ScoutingModels.Data
         /// <summary>
         /// The year the team was a rookie
         /// </summary>
-        public string RookieYear { get; set; }
+        public int RookieYear { get; set; }
 
         /// <summary>
         /// What events have they attended
