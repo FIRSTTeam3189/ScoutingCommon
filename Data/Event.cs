@@ -28,7 +28,7 @@ namespace ScoutingModels.Data
         /// <summary>
         /// Holds the Date the Event is held on
         /// </summary>
-        public string Date { get; set; }
+        public int Year { get; set; }
 
         /// <summary>
         /// Unique Identifier for the event used in Blue Alliance
@@ -44,8 +44,15 @@ namespace ScoutingModels.Data
     /// <summary>
     /// Event Types
     /// </summary>
-    public enum EventType
+    public enum EventType : int
         {
-               Preseason, Divison, DivisonChampionship, Regional, ChampionshipDivison, Championship, OffSeason
+               Preseason = 100,
+               District = 1,
+               DistrictChampionship = 2,
+               Regional = 0,
+               ChampionshipDivison = 3,
+               Championship = 4,
+               OffSeason = 99,
+               Unlabeled = -1
         }
 }
