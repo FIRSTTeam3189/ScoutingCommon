@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using Newtonsoft.Json.Linq;
 using ScoutingModels.Data;
@@ -13,6 +14,9 @@ namespace ScoutingModels.Test
         private const string EventCode = "event_code";
         private const string EventYear = "year";
         private const string EventWebsite = "website";
+        private const string StartDate = "start_date";
+        private const string EndDate = "end_date";
+        private const string DateFormat = "yyyy-MM-dd";
 
         /// <summary>
         /// Gets an Event from the JToken provided
@@ -23,6 +27,23 @@ namespace ScoutingModels.Test
         {
             obj.IsNotNull();
 
+            DateTime? start = null;
+            DateTime? end = null;
+            DateTime t;
+
+            // Get the DateTimes for start, end
+            if (DateTime.TryParseExact(obj[StartDate].ToObject<string>(), DateFormat, CultureInfo.InvariantCulture,
+                DateTimeStyles.AdjustToUniversal,
+                out t))
+                start = DateTime.ParseExact(obj[StartDate].ToObject<string>(), DateFormat,
+                    CultureInfo.InvariantCulture);
+
+            if (DateTime.TryParseExact(obj[EndDate].ToObject<string>(), DateFormat, CultureInfo.InvariantCulture,
+                DateTimeStyles.AdjustToUniversal,
+                out t))
+                end = DateTime.ParseExact(obj[EndDate].ToObject<string>(), DateFormat,
+                    CultureInfo.InvariantCulture);
+
             var ev = new Event
             {
                 Location = obj[EventLocation].ToObject<string>(),
@@ -30,7 +51,10 @@ namespace ScoutingModels.Test
                 EventCode = obj[EventCode].ToObject<string>(),
                 Type = (EventType) obj[EventType].ToObject<int>(),
                 Website = obj[EventWebsite].ToObject<string>() ?? "No EventWebsite",
-                Id = Guid.NewGuid().ToString()
+                Id = Guid.NewGuid().ToString(),
+                StartDate = start,
+                EndDate = end,
+                Name = obj["name"].ToObject<string>()
             };
 
             return ev;

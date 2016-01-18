@@ -11,6 +11,11 @@ namespace ScoutingModels.Data
     public class Event
     {
         /// <summary>
+        /// Name of the event
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
         /// classifies the Event in terms of Ranking
         /// </summary>
         public EventType Type { get; set; }
@@ -39,6 +44,16 @@ namespace ScoutingModels.Data
         /// The Event's Webpage if available
         /// </summary>
         public string Website { get; set; }
+
+        /// <summary>
+        /// Start date of the event, can be null
+        /// </summary>
+        public DateTime? StartDate { get; set; }
+
+        /// <summary>
+        /// End date of the event, can be null
+        /// </summary>
+        public DateTime? EndDate { get; set;  }
     }
 
     /// <summary>
