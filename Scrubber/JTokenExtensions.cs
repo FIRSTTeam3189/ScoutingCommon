@@ -17,6 +17,8 @@ namespace ScoutingModels.Test
         private const string StartDate = "start_date";
         private const string EndDate = "end_date";
         private const string DateFormat = "yyyy-MM-dd";
+        private const string EventName = "name";
+        private const string EventOfficial = "official";
 
         /// <summary>
         /// Gets an Event from the JToken provided
@@ -54,7 +56,8 @@ namespace ScoutingModels.Test
                 Id = Guid.NewGuid().ToString(),
                 StartDate = start,
                 EndDate = end,
-                Name = obj["name"].ToObject<string>()
+                Name = obj[EventName].ToObject<string>(),
+                Official = obj[EventOfficial].ToObject<bool>()
             };
 
             return ev;

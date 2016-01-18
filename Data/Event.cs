@@ -53,7 +53,12 @@ namespace ScoutingModels.Data
         /// <summary>
         /// End date of the event, can be null
         /// </summary>
-        public DateTime? EndDate { get; set;  }
+        public DateTime? EndDate { get; set; }
+
+        /// <summary>
+        /// Is the event official
+        /// </summary>
+        public bool Official { get; set; }
     }
 
     /// <summary>
