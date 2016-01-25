@@ -60,7 +60,7 @@ namespace ScoutingModels.Scrubber
         public async Task<Team> GetTeam(int teamnumber)
         {
             var requestUri = string.Format(
-                Path.Combine(BlueAllianceConstants.ApiPath, BlueAllianceConstants.Teams), teamnumber);
+                Path.Combine(BlueAllianceConstants.ApiPath, BlueAllianceConstants.Team), teamnumber);
 
             var array = (await client.GetStreamAsync(requestUri)).JTokenFromStream();
 

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
-using GregorianCalendar = Java.Util.GregorianCalendar;
 
 namespace ScoutingModels.Extentions
 {
